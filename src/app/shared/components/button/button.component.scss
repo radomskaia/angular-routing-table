@@ -1,0 +1,46 @@
+.button {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  width: inherit;
+  height: inherit;
+  box-shadow: none;
+  background-color: transparent;
+  transform: translateY(0);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.button:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  transform: translateY(-0.2rem);
+}
+
+.button:active {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  transform: translateY(0);
+}
+
+.textButton {
+  display: inline-flex;
+  border: 1px solid var(--primary);
+  border-radius: var(--border-radius);
+  padding: 0.5rem 1rem;
+  font-size: inherit;
+  color: var(--static-white);
+  background-color: var(--primary);
+}
+
+.icon {
+  width: inherit;
+  height: inherit;
+  transform: scale(1);
+  transition: 0.3s ease-in-out;
+}
+
+.searchButton {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}

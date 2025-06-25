@@ -1,0 +1,15 @@
+<button
+  [type]="type"
+  [disabled]="disabled"
+  [attr.aria-label]="ariaLabel"
+  [ngClass]="classes"
+  (click)="handleClick($event)"
+>
+  <ng-container *ngIf="iconPath">
+    <app-svg-icon
+      [path]="iconPath"
+      class="icon"
+    />
+  </ng-container>
+  <ng-content />
+</button>
