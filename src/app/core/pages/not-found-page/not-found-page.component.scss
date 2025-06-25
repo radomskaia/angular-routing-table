@@ -1,0 +1,31 @@
+.icon {
+  width: 10rem;
+  height: 10rem;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 13.5rem);
+  padding-inline: 2rem;
+
+  @media screen and (max-width: 52em) {
+    height: calc(100vh - 17.5rem);
+  }
+}
+
+.text {
+  font-size: 3.5rem;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.button {
+  align-self: end;
+  margin-top: auto;
+}
