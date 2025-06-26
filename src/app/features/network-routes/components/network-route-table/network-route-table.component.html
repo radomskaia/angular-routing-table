@@ -7,7 +7,7 @@
       <th
         *ngFor="let key of tableColumns"
         (click)="onHeaderClick(key)"
-        [ngClass]="{ headerActive: sortOrder.value === key }"
+        [ngClass]="{ headerActive: sortOrder === key }"
       >
         <div class="tableHeaderCell">
           <p>{{ key }}</p>
@@ -16,10 +16,10 @@
             [ariaLabel]="sortButton.alt"
             class="orderButton icon"
             [ngClass]="{
-              orderButtonRotate: sortDirection.value === 'asc',
-              hidden: this.sortOrder.value !== key,
+              orderButtonRotate: sortDirection === 'asc',
+              hidden: this.sortOrder !== key,
             }"
-            (clicked)="toggleSortDirections()"
+            (clicked)="onToggleSort()"
           />
         </div>
       </th>

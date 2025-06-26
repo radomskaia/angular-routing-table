@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { NetworkRouteTableComponent } from '../../../features/network-route-table/network-route-table.component';
+import { NetworkRoutesComponent } from '../../../features/network-routes/network-routes.component';
 
 @Component({
-  imports: [NetworkRouteTableComponent],
+  imports: [NetworkRoutesComponent],
   selector: 'app-main-page',
   styleUrl: './main-page.component.scss',
   templateUrl: './main-page.component.html',

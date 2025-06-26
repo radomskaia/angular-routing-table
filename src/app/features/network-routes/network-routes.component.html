@@ -1,0 +1,7 @@
+<app-network-route-table
+  [networkRoutes]="networkRoutes"
+  [sortOrder]="sortOrder.value"
+  [sortDirection]="sortDirection.value"
+  (sortOrderChange)="handleSortOrderChange($event)"
+  (toggleDirection)="handleSortDirectionToggle()"
+/>
