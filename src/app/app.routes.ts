@@ -1,6 +1,6 @@
 import type { Routes } from '@angular/router';
-import { MainPageComponent } from './core/pages/main-page/main-page.component';
-import { NotFoundPageComponent } from './core/pages/not-found-page/not-found-page.component';
+import { MainPageComponent } from './pages/main-page/main-page.component';
+import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 
 export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'main' },

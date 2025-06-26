@@ -1,8 +1,8 @@
 import type { PipeTransform } from '@angular/core';
 import { Pipe } from '@angular/core';
-import type { NetworkRoute } from '../models/network-route.model';
 import type { SortOrder } from '../types/sort.types';
-import { getPrefixLength } from '../../shared/utils/ip-utilities';
+import { getPrefixLength } from '../utils/ip-utilities';
+import type { NetworkRoute } from '../../core/models/network-route.model';
 
 @Pipe({
   name: 'formatTableString',

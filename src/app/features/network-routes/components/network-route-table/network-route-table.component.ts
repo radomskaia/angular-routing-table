@@ -2,13 +2,13 @@ import { EventEmitter, Input, Output } from '@angular/core';
 import { Component } from '@angular/core';
 import { NgClass, NgForOf } from '@angular/common';
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
-import { FormatTableStringPipe } from '../../../../core/pipes/format-table-string.pipe';
 import type { NetworkRoute } from '../../../../core/models/network-route.model';
+import { ICON_PATH } from '../../../../shared/constants/buttons-constants';
 import type {
   SortDirection,
   SortOrder,
-} from '../../../../core/types/sort.types';
-import { ICON_PATH } from '../../../../shared/constants/buttons-constants';
+} from '../../../../shared/types/sort.types';
+import { FormatTableStringPipe } from '../../../../shared/pipes/format-table-string.pipe';
 
 @Component({
   imports: [NgForOf, ButtonComponent, NgClass, FormatTableStringPipe],

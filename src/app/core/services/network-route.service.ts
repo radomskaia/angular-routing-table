@@ -1,6 +1,5 @@
 import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import type { SortDirection, SortOrder } from '../types/sort.types';
 import type {
   NetworkRoute,
   NetworkRouteResponse,
@@ -8,6 +7,7 @@ import type {
 import type { Observable } from 'rxjs';
 import { map } from 'rxjs';
 import { RouteSortService } from './route-sort.service';
+import type { SortDirection, SortOrder } from '../../shared/types/sort.types';
 
 @Injectable({
   providedIn: 'root',

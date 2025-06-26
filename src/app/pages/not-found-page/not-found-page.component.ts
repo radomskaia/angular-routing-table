@@ -1,8 +1,8 @@
 import { Component, inject } from '@angular/core';
-import { ICON_PATH } from '../../../shared/constants/buttons-constants';
-import { SvgIconComponent } from '../../../shared/components/svg-icon/svg-icon.component';
-import { ButtonComponent } from '../../../shared/components/button/button.component';
 import { Router } from '@angular/router';
+import { SvgIconComponent } from '../../shared/components/svg-icon/svg-icon.component';
+import { ButtonComponent } from '../../shared/components/button/button.component';
+import { ICON_PATH } from '../../shared/constants/buttons-constants';
 
 @Component({
   imports: [SvgIconComponent, ButtonComponent],

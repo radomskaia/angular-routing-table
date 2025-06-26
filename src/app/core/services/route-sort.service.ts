@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import type { NetworkRoute } from '../models/network-route.model';
-import type { SortDirection, SortOrder } from '../types/sort.types';
 import { getPrefixLength } from '../../shared/utils/ip-utilities';
 import {
   BITS_PER_BYTE,
@@ -8,6 +7,7 @@ import {
   MIN_OCTET_VALUE,
   OCTET_COUNT,
 } from '../../shared/constants/ip-constants';
+import type { SortDirection, SortOrder } from '../../shared/types/sort.types';
 
 @Injectable({
   providedIn: 'root',

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NetworkRoutesComponent } from '../../../features/network-routes/network-routes.component';
+import { NetworkRoutesComponent } from '../../features/network-routes/network-routes.component';
 
 @Component({
   imports: [NetworkRoutesComponent],

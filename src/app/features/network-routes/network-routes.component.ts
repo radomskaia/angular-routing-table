@@ -4,9 +4,9 @@ import { NetworkRouteTableComponent } from './components/network-route-table/net
 import type { NetworkRoute } from '../../core/models/network-route.model';
 import { NetworkRouteService } from '../../core/services/network-route.service';
 import { BehaviorSubject, combineLatest, switchMap } from 'rxjs';
-import type { SortDirection, SortOrder } from '../../core/types/sort.types';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { PAGE_SIZES } from '../../shared/constants/pagination-constants';
+import type { SortDirection, SortOrder } from '../../shared/types/sort.types';
 
 const DEFAULT_PAGE = 1;
 
