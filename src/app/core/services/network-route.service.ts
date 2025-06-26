@@ -8,12 +8,13 @@ import type { Observable } from 'rxjs';
 import { map } from 'rxjs';
 import { RouteSortService } from './route-sort.service';
 import type { SortDirection, SortOrder } from '../../shared/types/sort.types';
+import { MOCK_URL } from '../../shared/constants/common-constants';
 
 @Injectable({
   providedIn: 'root',
 })
 export class NetworkRouteService {
-  private mockUrl = 'mock-routes.json';
+  private mockUrl = MOCK_URL;
   private http = inject(HttpClient);
   private sortService = inject(RouteSortService);
 

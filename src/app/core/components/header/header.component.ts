@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PAGE_AUTHOR } from '../../../shared/constants/common-constants';
 
 @Component({
   imports: [],
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.scss',
   templateUrl: './header.component.html',
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+  protected author = PAGE_AUTHOR;
+}

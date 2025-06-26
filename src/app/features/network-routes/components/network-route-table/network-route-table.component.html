@@ -16,7 +16,7 @@
             [ariaLabel]="sortButton.alt"
             class="orderButton icon"
             [ngClass]="{
-              orderButtonRotate: sortDirection === 'asc',
+              orderButtonRotate: sortDirection === ascDirection,
               hidden: this.sortOrder !== key,
             }"
             (clicked)="onToggleSort()"

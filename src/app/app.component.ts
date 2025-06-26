@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './core/components/header/header.component';
+import { PAGE_TITLE } from './shared/constants/common-constants';
 
 @Component({
   imports: [RouterOutlet, HeaderComponent],
@@ -9,5 +10,5 @@ import { HeaderComponent } from './core/components/header/header.component';
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  public title = 'route-table';
+  public title = PAGE_TITLE;
 }

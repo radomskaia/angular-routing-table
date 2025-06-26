@@ -3,12 +3,19 @@ import { Component } from '@angular/core';
 import { NgClass, NgForOf } from '@angular/common';
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
 import type { NetworkRoute } from '../../../../core/models/network-route.model';
-import { ICON_PATH } from '../../../../shared/constants/buttons-constants';
+import {
+  BUTTON_TEXT,
+  ICON_PATH,
+} from '../../../../shared/constants/buttons-constants';
 import type {
   SortDirection,
   SortOrder,
 } from '../../../../shared/types/sort.types';
 import { FormatTableStringPipe } from '../../../../shared/pipes/format-table-string.pipe';
+import {
+  SORT_DIRECTION,
+  SORT_ORDER,
+} from '../../../../shared/constants/sort-constants';
 
 @Component({
   imports: [NgForOf, ButtonComponent, NgClass, FormatTableStringPipe],
@@ -24,15 +31,17 @@ export class NetworkRouteTableComponent {
   @Output() public sortOrderChange = new EventEmitter<SortOrder>();
   @Output() public toggleDirection = new EventEmitter<void>();
 
+  protected ascDirection = SORT_DIRECTION.ASC;
+
   protected sortButton = {
-    alt: 'Toggle ascending or descending directions',
+    alt: BUTTON_TEXT.SORT,
     path: ICON_PATH.SORT,
   };
 
   protected readonly tableColumns: SortOrder[] = [
-    'address',
-    'gateway',
-    'interface',
+    SORT_ORDER.ADDRESS,
+    SORT_ORDER.GATEWAY,
+    SORT_ORDER.INTERFACE,
   ];
 
   protected onHeaderClick(key: SortOrder): void {

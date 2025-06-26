@@ -8,6 +8,10 @@ import {
   OCTET_COUNT,
 } from '../../shared/constants/ip-constants';
 import type { SortDirection, SortOrder } from '../../shared/types/sort.types';
+import {
+  SORT_DIRECTION,
+  SORT_ORDER,
+} from '../../shared/constants/sort-constants';
 
 @Injectable({
   providedIn: 'root',
@@ -18,22 +22,22 @@ export class RouteSortService {
     key: SortOrder,
     direction: SortDirection,
   ): NetworkRoute[] {
-    const factor = direction === 'asc' ? 1 : -1;
+    const factor = direction === SORT_DIRECTION.ASC ? 1 : -1;
     return this.filterValidRoutes(routes).sort(
       (a, b) => this.compare(a, b, key) * factor,
     );
   }
 
   private compare(a: NetworkRoute, b: NetworkRoute, key: SortOrder): number {
-    if (key === 'address') {
+    if (key === SORT_ORDER.ADDRESS) {
       return this.compareIpThenMask(a, b);
     }
 
-    if (key === 'gateway') {
+    if (key === SORT_ORDER.GATEWAY) {
       return this.compareIp(a.gateway, b.gateway);
     }
 
-    if (key === 'interface') {
+    if (key === SORT_ORDER.INTERFACE) {
       return a.interface.localeCompare(b.interface);
     }
 

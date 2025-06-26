@@ -1,9 +1,11 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { NgClass, NgIf } from '@angular/common';
-import type { BUTTON_TYPE } from '../../constants/buttons-constants';
+import { BUTTON_TYPE } from '../../constants/buttons-constants';
 import { SvgIconComponent } from '../svg-icon/svg-icon.component';
 
 type ButtonType = (typeof BUTTON_TYPE)[keyof typeof BUTTON_TYPE];
+const TEXT_BUTTON_CLASS = 'textButton';
+const BUTTON_CLASS = 'button';
 
 @Component({
   imports: [NgClass, NgIf, SvgIconComponent],
@@ -14,7 +16,7 @@ type ButtonType = (typeof BUTTON_TYPE)[keyof typeof BUTTON_TYPE];
 export class ButtonComponent {
   @Input() public iconPath?: string;
   @Input() public disabled = false;
-  @Input() public type: ButtonType = 'button';
+  @Input() public type: ButtonType = BUTTON_TYPE.BUTTON;
   @Input() public ariaLabel = '';
   @Input() public className = '';
   @Output() public clicked = new EventEmitter<Event>();
@@ -27,8 +29,8 @@ export class ButtonComponent {
 
   public get classes(): string[] {
     const classNamesArray = this.className.split(' ');
-    const textButtonClass = !this.iconPath ? 'textButton' : '';
+    const textButtonClass = !this.iconPath ? TEXT_BUTTON_CLASS : '';
 
-    return ['button', ...classNamesArray, textButtonClass];
+    return [BUTTON_CLASS, ...classNamesArray, textButtonClass];
   }
 }

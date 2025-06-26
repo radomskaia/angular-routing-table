@@ -11,3 +11,11 @@ export const BUTTON_TYPE = {
   BUTTON: 'button',
   SUBMIT: 'submit',
 } as const;
+export const BUTTON_TEXT = {
+  FIRST: 'Go to first page',
+  LAST: 'Go to last page',
+  NEXT: 'Go to next page',
+  NOT_FOUND: 'Go to home page',
+  PREVIOUS: 'Go to previous page',
+  SORT: 'Toggle ascending or descending directions',
+};

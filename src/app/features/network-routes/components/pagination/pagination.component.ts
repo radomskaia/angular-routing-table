@@ -1,6 +1,9 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
-import { ICON_PATH } from '../../../../shared/constants/buttons-constants';
+import {
+  BUTTON_TEXT,
+  ICON_PATH,
+} from '../../../../shared/constants/buttons-constants';
 import { NgForOf } from '@angular/common';
 import { PAGE_SIZES } from '../../../../shared/constants/pagination-constants';
 
@@ -37,19 +40,19 @@ export class PaginationComponent {
 
   protected buttonConfig = {
     firstPage: {
-      alt: 'Go to first page',
+      alt: BUTTON_TEXT.FIRST,
       path: ICON_PATH.FIRST,
     },
     lastPage: {
-      alt: 'Go to last page',
+      alt: BUTTON_TEXT.LAST,
       path: ICON_PATH.LAST,
     },
     nextPage: {
-      alt: 'Go to next page',
+      alt: BUTTON_TEXT.NEXT,
       path: ICON_PATH.NEXT,
     },
     prevPage: {
-      alt: 'Go to previous page',
+      alt: BUTTON_TEXT.PREVIOUS,
       path: ICON_PATH.PREVIOUS,
     },
   };

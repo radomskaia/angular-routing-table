@@ -1,11 +1,11 @@
 <main class="main">
   <div class="flex flexGap2 alignCenter">
     <app-svg-icon
-      [path]="icoPath"
+      [path]="iconPath"
       class="icon"
     />
     <div class="title">
-      <p class="text">Sorry, smth went wrong((</p>
+      <p class="text">{{ message }}</p>
       <app-button
         class="button"
         (clicked)="onBackButtonClick()"
