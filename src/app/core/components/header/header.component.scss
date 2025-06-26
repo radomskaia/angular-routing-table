@@ -6,7 +6,6 @@
 
   &Container {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
@@ -35,4 +34,11 @@
 
 .link:visited {
   color: var(--primary-alpha);
+}
+
+@media screen and (max-width: 30em) {
+  .headerContainer {
+    flex-direction: column;
+    justify-content: center;
+  }
 }

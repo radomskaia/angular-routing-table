@@ -6,7 +6,7 @@
   --primary-alpha2: rgb(28 39 77 / 10%);
   --secondary: #ccc19f;
   --secondary-alpha: rgba(204, 193, 159, 0.5);
-  --secondary-alpha2: rgba(204, 193, 159, 0.3);
+  --secondary-alpha2: rgba(204, 193, 159, 0.2);
   --red: rgba(249, 162, 186, 0.5);
   --static-white: #fbfbfd;
   --content-background: #ecf3f8;
@@ -56,6 +56,18 @@
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
+
+  @media screen and (max-width: 38em) {
+    font-size: 56.25%;
+  }
+
+  @media screen and (max-width: 34em) {
+    font-size: 50%;
+  }
+
+  @media screen and (max-width: 30em) {
+    font-size: 43.75%;
+  }
 }
 
 a:link,
@@ -82,4 +94,18 @@ body {
   margin: 0 auto;
   max-width: 120rem;
   padding-inline: 3rem;
+
+  @media screen and (max-width: 38em) {
+    padding-inline: 2rem;
+  }
+
+  @media screen and (max-width: 30em) {
+    padding-inline: 1rem;
+  }
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
