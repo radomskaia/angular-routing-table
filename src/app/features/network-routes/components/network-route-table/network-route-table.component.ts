@@ -46,7 +46,11 @@ export class NetworkRouteTableComponent {
 
   protected onHeaderClick(key: SortOrder): void {
     if (this.sortOrder === key) {
+      this.onToggleSort();
       return;
+    }
+    if (this.sortDirection !== SORT_DIRECTION.ASC) {
+      this.onToggleSort();
     }
     this.sortOrderChange.emit(key);
   }
