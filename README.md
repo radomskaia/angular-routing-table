@@ -1,4 +1,5 @@
 # Network Routes Table
+
 A web application that displays a sortable and paginated table of network routes. Built with **Angular (v18+)**, **TypeScript**, and **RxJS**.
 
 ## 📸 Preview
@@ -9,12 +10,12 @@ A web application that displays a sortable and paginated table of network routes
   <img src="https://github.com/user-attachments/assets/d9216c60-4e18-4764-9489-ba38fd1eaad3" width="300"/>
 </p>
 
-
 ## 🔗 Live Demo
+
 👉 [View it on GitHub Pages](https://radomskaia.github.io/angular-routing-table/main)
 
-
 ## Features
+
 - 📋 Sortable table with custom sorting logic:
   - **Address**: sorted by IP address
   - **Gateway**: sorted by IP address
@@ -39,6 +40,7 @@ interface Route {
 ```
 
 ## Technical Stack
+
 - **Framework**: Angular 19.2.0
 - **Language**: TypeScript 5.7.2
 - **State Management**: RxJS 7.8.0
@@ -46,56 +48,67 @@ interface Route {
 - **Testing**: Jasmine + Karma
 
 ## IP Address Processing
+
 The application uses sophisticated algorithms to process and sort IP addresses properly:
+
 - IP addresses are converted to numerical values for accurate sorting
 - Subnet masks are converted to prefix lengths (CIDR notation)
 - Validation ensures that IP addresses and subnet masks follow standard formats
 
 ## Architecture
+
 The application follows a modular architecture with:
+
 - **Core Module**: Contains essential services and models
-    - Network Route Service: Handles API interactions and data processing
-    - Route Sort Service: Manages complex sorting logic for IP addresses
+  - Network Route Service: Handles API interactions and data processing
+  - Route Sort Service: Manages complex sorting logic for IP addresses
 
 - **Shared Module**: Contains reusable components and utilities
-    - IP Utilities: Functions for processing IP addresses and subnet masks
-    - Pipes: Custom formatting for table data
+  - IP Utilities: Functions for processing IP addresses and subnet masks
+  - Pipes: Custom formatting for table data
 
 - **Feature Modules**: Contain specific application features
-    - Network Routes Table: Main component for displaying route information
-    - Pagination Controls: Component for navigating through pages of routes
+  - Network Routes Table: Main component for displaying route information
+  - Pagination Controls: Component for navigating through pages of routes
 
 ## Getting Started
+
 ### Prerequisites
+
 - Node.js (v16 or later)
 - npm (v8 or later)
 
 ### Installation
+
 1. Clone the repository
-   ``` bash
+   ```bash
    git clone https://github.com/username/network-routes-manager.git
    cd network-routes-manager
    ```
 2. Install dependencies
-   ``` bash
+   ```bash
    npm install
    ```
 3. Start the development server
-   ``` bash
+   ```bash
    npm start
    ```
 4. Open your browser and navigate to `http://localhost:4200`
 
 ## Build
+
 To build the application for production:
-``` bash
+
+```bash
 npm run build
 ```
+
 The built application will be in the `dist/` directory.
 
 ## Testing
+
 Run tests with:
-``` bash
+
+```bash
 npm test
 ```
-

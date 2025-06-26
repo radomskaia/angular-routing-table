@@ -70,8 +70,12 @@ html {
     font-size: 43.75%;
   }
 
-  @media screen and (max-width: 24em) {
+  @media screen and (max-width: 27em) {
     font-size: 37.5%;
+  }
+
+  @media screen and (max-width: 19em) {
+    font-size: clamp(25%, 1.7vw, 37.5%);
   }
 }
 
@@ -101,11 +105,11 @@ body {
   max-width: 120rem;
   padding-inline: 3rem;
 
-  @media screen and (max-width: 38em) {
+  @media screen and (max-width: 35em) {
     padding-inline: 2rem;
   }
 
-  @media screen and (max-width: 30em) {
+  @media screen and (max-width: 27em) {
     padding-inline: 1rem;
   }
 }

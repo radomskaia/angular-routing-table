@@ -1,8 +1,13 @@
 .table {
   border-collapse: collapse;
   border-radius: var(--border-radius2);
+  width: clamp(300px, 95vw, 800px);
   box-shadow: var(--shadow-big);
   text-align: left;
+
+  @media screen and (max-width: 19em) {
+    width: 100%;
+  }
 }
 
 caption {
@@ -18,7 +23,11 @@ caption {
 }
 
 .tableData {
-  min-width: 16rem;
+  min-width: clamp(96px, 30vw, 160px);
+
+  @media screen and (max-width: 19em) {
+    min-width: 100%;
+  }
 }
 
 .tableHeader {
@@ -108,7 +117,7 @@ tr th:last-child {
   gap: 2rem;
 }
 
-@media screen and (max-width: 30em) {
+@media screen and (max-width: 27em) {
   .tableHeaderCell {
     flex-wrap: wrap;
     gap: 1rem;
