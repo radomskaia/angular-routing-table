@@ -1,15 +1,13 @@
 import { Injectable } from '@angular/core';
 import type { NetworkRoute } from '../models/network-route.model';
 import type { SortDirection, SortOrder } from '../types/sort.types';
-
-export const BITS_PER_BYTE = 8;
-export const BITS_PER_OCTET = 8;
-export const OCTET_COUNT = 4;
-export const MAX_OCTET_VALUE = 255;
-export const MIN_OCTET_VALUE = 0;
-export const BINARY_RADIX = 2;
-export const BIT_0 = '0';
-export const BIT_1 = '1';
+import { getPrefixLength } from '../../shared/utils/ip-utilities';
+import {
+  BITS_PER_BYTE,
+  MAX_OCTET_VALUE,
+  MIN_OCTET_VALUE,
+  OCTET_COUNT,
+} from '../../shared/constants/ip-constants';
 
 @Injectable({
   providedIn: 'root',
@@ -66,40 +64,10 @@ export class RouteSortService {
   }
 
   private comparePrefixMask(maskA: string, maskB: string): number {
-    const lengthA = this.getPrefixLength(maskA);
-    const lengthB = this.getPrefixLength(maskB);
+    const lengthA = getPrefixLength(maskA);
+    const lengthB = getPrefixLength(maskB);
 
     return lengthA - lengthB;
-  }
-
-  private getPrefixLength(mask: string): number {
-    const octets = mask.split('.');
-
-    if (octets.length !== OCTET_COUNT) {
-      return 0;
-    }
-
-    let binary = '';
-    for (const octet of octets) {
-      const number_ = Number(octet);
-      if (
-        isNaN(number_) ||
-        number_ < MIN_OCTET_VALUE ||
-        number_ > MAX_OCTET_VALUE
-      ) {
-        return 0;
-      }
-      binary += number_.toString(BINARY_RADIX).padStart(BITS_PER_OCTET, BIT_0);
-    }
-
-    const firstZero = binary.indexOf(BIT_0);
-    const lastOne = binary.lastIndexOf(BIT_1);
-
-    if (firstZero !== -1 && lastOne > firstZero) {
-      return 0;
-    }
-
-    return binary.split(BIT_1).length - 1;
   }
 
   private filterValidRoutes(routes: NetworkRoute[]): NetworkRoute[] {
