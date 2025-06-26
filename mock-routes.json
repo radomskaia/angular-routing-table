@@ -1,0 +1,128 @@
+[
+  {
+    "uuid": "1",
+    "address": "0.0.0.0",
+    "mask": "0.0.0.0",
+    "gateway": "192.168.100.1",
+    "interface": "Ethernet A"
+  },
+  {
+    "uuid": "2",
+    "address": "10.0.0.0",
+    "mask": "255.0.0.0",
+    "gateway": "10.10.10.1",
+    "interface": "VPN"
+  },
+  {
+    "uuid": "3",
+    "address": "172.16.0.0",
+    "mask": "255.240.0.0",
+    "gateway": "172.16.1.1",
+    "interface": "VPN"
+  },
+  {
+    "uuid": "4",
+    "address": "192.168.1.0",
+    "mask": "255.255.255.0",
+    "gateway": "0.0.0.0",
+    "interface": "Home WiFi"
+  },
+  {
+    "uuid": "5",
+    "address": "192.168.1.128",
+    "mask": "255.255.255.128",
+    "gateway": "192.168.1.1",
+    "interface": "Home WiFi"
+  },
+  {
+    "uuid": "6",
+    "address": "192.168.1.64",
+    "mask": "255.255.255.192",
+    "gateway": "192.168.1.65",
+    "interface": "IoT Network"
+  },
+  {
+    "uuid": "7",
+    "address": "193.0.175.0",
+    "mask": "255.255.255.0",
+    "gateway": "193.0.174.1",
+    "interface": "Ethernet B"
+  },
+  {
+    "uuid": "8",
+    "address": "193.0.175.0",
+    "mask": "255.255.255.128",
+    "gateway": "193.0.174.10",
+    "interface": "Ethernet B"
+  },
+  {
+    "uuid": "9",
+    "address": "193.0.175.22",
+    "mask": "255.255.255.255",
+    "gateway": "193.0.174.1",
+    "interface": "Ethernet B"
+  },
+  {
+    "uuid": "10",
+    "address": "0.0.0.0",
+    "mask": "0.0.0.0",
+    "gateway": "193.0.174.1",
+    "interface": "Ethernet Connection"
+  },
+  {
+    "uuid": "11",
+    "address": "10.1.30.0",
+    "mask": "255.255.255.0",
+    "gateway": "0.0.0.0",
+    "interface": "Guest Network"
+  },
+  {
+    "uuid": "12",
+    "address": "192.168.1.0",
+    "mask": "255.255.255.0",
+    "gateway": "0.0.0.0",
+    "interface": "Home Network"
+  },
+  {
+    "uuid": "13",
+    "address": "193.0.174.0",
+    "mask": "255.255.254.0",
+    "gateway": "193.0.174.1",
+    "interface": "Work Network"
+  },
+  {
+    "uuid": "14",
+    "address": "193.0.174.0",
+    "mask": "255.255.255.0",
+    "gateway": "0.0.0.0",
+    "interface": "Ethernet Connection"
+  },
+  {
+    "uuid": "15",
+    "address": "193.0.175.0",
+    "mask": "255.255.255.128",
+    "gateway": "193.0.174.10",
+    "interface": "Ethernet Connection"
+  },
+  {
+    "uuid": "16",
+    "address": "193.0.175.22",
+    "mask": "255.255.255.255",
+    "gateway": "193.0.174.1",
+    "interface": "Home VPN"
+  },
+  {
+    "uuid": "17",
+    "address": "172.16.0.0",
+    "mask": "255.240.0.0",
+    "gateway": "10.1.30.1",
+    "interface": "VPN"
+  },
+  {
+    "uuid": "18",
+    "address": "10.0.0.0",
+    "mask": "255.0.0.0",
+    "gateway": "10.1.30.1",
+    "interface": "Corporate LAN"
+  }
+]
