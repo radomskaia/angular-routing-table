@@ -55,12 +55,14 @@ export class RouteSortService {
   }
 
   private ipToNumber(ip: string): number {
-    return ip
-      .split('.')
-      .reduce(
-        (accumulator, octet) => (accumulator << BITS_PER_BYTE) + +octet,
-        0,
-      );
+    return (
+      ip
+        .split('.')
+        .reduce(
+          (accumulator, octet) => (accumulator << BITS_PER_BYTE) + +octet,
+          0,
+        ) >>> 0
+    );
   }
 
   private comparePrefixMask(maskA: string, maskB: string): number {
