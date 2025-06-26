@@ -1,0 +1,47 @@
+<div class="pagination">
+  <label>
+    Items per page:
+    <select
+      [value]="getOptionValue()"
+      (change)="onPageSizeChange($event)"
+    >
+      <option
+        *ngFor="let size of pageSizes"
+        [value]="size"
+      >
+        {{ size }}
+      </option>
+    </select>
+  </label>
+  <div class="controls">
+    <app-button
+      class="button"
+      [disabled]="currentPage === firstPage"
+      [ariaLabel]="buttonConfig.firstPage.alt"
+      [iconPath]="buttonConfig.firstPage.path"
+      (clicked)="onFirstPageClick()"
+    />
+    <app-button
+      class="button"
+      [disabled]="currentPage === firstPage"
+      [ariaLabel]="buttonConfig.prevPage.alt"
+      [iconPath]="buttonConfig.prevPage.path"
+      (clicked)="onPrevPageClick()"
+    />
+    <p class="text">{{ currentPage }} / {{ totalPages }}</p>
+    <app-button
+      class="button"
+      [disabled]="currentPage === totalPages"
+      [ariaLabel]="buttonConfig.nextPage.alt"
+      [iconPath]="buttonConfig.nextPage.path"
+      (clicked)="onNextPageClick()"
+    />
+    <app-button
+      class="button"
+      [disabled]="currentPage === totalPages"
+      [ariaLabel]="buttonConfig.lastPage.alt"
+      [iconPath]="buttonConfig.lastPage.path"
+      (clicked)="onLastPageClick()"
+    />
+  </div>
+</div>

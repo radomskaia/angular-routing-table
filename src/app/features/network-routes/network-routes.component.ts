@@ -5,12 +5,13 @@ import type { NetworkRoute } from '../../core/models/network-route.model';
 import { NetworkRouteService } from '../../core/services/network-route.service';
 import { BehaviorSubject, combineLatest, switchMap } from 'rxjs';
 import type { SortDirection, SortOrder } from '../../core/types/sort.types';
+import { PaginationComponent } from './components/pagination/pagination.component';
+import { PAGE_SIZES } from '../../shared/constants/pagination-constants';
 
-const DEFAULT_PAGE_SIZE = 20;
 const DEFAULT_PAGE = 1;
 
 @Component({
-  imports: [NetworkRouteTableComponent],
+  imports: [NetworkRouteTableComponent, PaginationComponent],
   selector: 'app-network-routes',
   styleUrl: './network-routes.component.scss',
   templateUrl: './network-routes.component.html',
@@ -19,9 +20,10 @@ export class NetworkRoutesComponent implements OnInit {
   private networkRouteService = inject(NetworkRouteService);
 
   public networkRoutes: NetworkRoute[] = [];
+  public totalRoutes = 1;
   public sortOrder = new BehaviorSubject<SortOrder>('address');
   public sortDirection = new BehaviorSubject<SortDirection>('asc');
-  public pageSize = new BehaviorSubject<number>(DEFAULT_PAGE_SIZE);
+  public pageSize = new BehaviorSubject<number>(PAGE_SIZES.SMALL);
   public page = new BehaviorSubject<number>(DEFAULT_PAGE);
 
   public ngOnInit(): void {
@@ -36,7 +38,10 @@ export class NetworkRoutesComponent implements OnInit {
           this.networkRouteService.getRoutes(order, direction, page, pageSize),
         ),
       )
-      .subscribe((data) => (this.networkRoutes = data));
+      .subscribe((data) => {
+        this.networkRoutes = data.routes;
+        this.totalRoutes = data.total;
+      });
   }
 
   protected handleSortOrderChange(key: SortOrder): void {
@@ -46,5 +51,13 @@ export class NetworkRoutesComponent implements OnInit {
   protected handleSortDirectionToggle(): void {
     const next = this.sortDirection.value === 'asc' ? 'desc' : 'asc';
     this.sortDirection.next(next);
+  }
+
+  protected handlePageChange(page: number): void {
+    this.page.next(page);
+  }
+
+  protected handlePageSizeChange(pageSize: number): void {
+    this.pageSize.next(pageSize);
   }
 }

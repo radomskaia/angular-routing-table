@@ -1,7 +1,10 @@
 import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import type { SortDirection, SortOrder } from '../types/sort.types';
-import type { NetworkRoute } from '../models/network-route.model';
+import type {
+  NetworkRoute,
+  NetworkRouteResponse,
+} from '../models/network-route.model';
 import type { Observable } from 'rxjs';
 import { map } from 'rxjs';
 import { RouteSortService } from './route-sort.service';
@@ -19,14 +22,13 @@ export class NetworkRouteService {
     direction: SortDirection,
     page: number,
     pageSize: number,
-  ): Observable<NetworkRoute[]> {
+  ): Observable<NetworkRouteResponse> {
     return this.getDataSource().pipe(
       map((result) => {
         const start = (page - 1) * pageSize;
         const end = start + pageSize;
-        return this.sortService
-          .sortRoutes(result, order, direction)
-          .slice(start, end);
+        const data = this.sortService.sortRoutes(result, order, direction);
+        return { routes: data.slice(start, end), total: data.length };
       }),
     );
   }

@@ -5,3 +5,8 @@ export interface NetworkRoute {
   gateway: string;
   interface: string;
 }
+
+export interface NetworkRouteResponse {
+  routes: NetworkRoute[];
+  total: number;
+}

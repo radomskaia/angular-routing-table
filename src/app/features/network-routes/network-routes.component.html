@@ -5,3 +5,10 @@
   (sortOrderChange)="handleSortOrderChange($event)"
   (toggleDirection)="handleSortDirectionToggle()"
 />
+<app-pagination
+  [pageSize]="pageSize.value"
+  [currentPage]="page.value"
+  [totalRoutes]="this.totalRoutes"
+  (pageChange)="handlePageChange($event)"
+  (pageSizeChange)="handlePageSizeChange($event)"
+/>

@@ -8,19 +8,40 @@
   height: inherit;
   box-shadow: none;
   background-color: transparent;
-  transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0) scale(1);
   transition: all 0.2s ease-in-out;
   cursor: pointer;
 }
 
 .button:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
-  transform: translateY(-0.2rem);
+  transform: translateY(-0.2rem) scale(1);
 }
 
 .button:active {
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
+}
+
+.button:has(.icon):hover {
+  box-shadow: none;
+  transform: translateY(0) scale(1.2);
+}
+
+.button:has(.icon):active {
+  box-shadow: none;
+  transform: translateY(0) scale(1);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: default;
+
+  &:hover {
+    box-shadow: none;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .textButton {
