@@ -1,9 +1,8 @@
 .table {
   border-collapse: collapse;
   border-radius: var(--border-radius2);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow-big);
   text-align: left;
-  color: var(--primary);
 }
 
 caption {
@@ -67,7 +66,7 @@ tbody tr:last-child td:last-child {
 
 th,
 td {
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-table);
 }
 
 thead tr:first-child th {
