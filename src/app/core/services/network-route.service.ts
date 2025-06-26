@@ -6,9 +6,6 @@ import type { Observable } from 'rxjs';
 import { map } from 'rxjs';
 import { RouteSortService } from './route-sort.service';
 
-const DEFAULT_PAGE_SIZE = 10;
-const DEFAULT_PAGE = 1;
-
 @Injectable({
   providedIn: 'root',
 })
@@ -20,8 +17,8 @@ export class NetworkRouteService {
   public getRoutes(
     order: SortOrder,
     direction: SortDirection,
-    page = DEFAULT_PAGE,
-    pageSize = DEFAULT_PAGE_SIZE,
+    page: number,
+    pageSize: number,
   ): Observable<NetworkRoute[]> {
     return this.getDataSource().pipe(
       map((result) => {

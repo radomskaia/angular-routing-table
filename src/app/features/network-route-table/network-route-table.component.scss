@@ -1,0 +1,117 @@
+.table {
+  border-collapse: collapse;
+  border-radius: var(--border-radius2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  text-align: left;
+  color: var(--primary);
+}
+
+caption {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  font-size: 2.4rem;
+}
+
+.tableHeader,
+.tableData {
+  padding: 1rem 1.5rem;
+  word-break: break-word;
+}
+
+.tableHeader {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: var(--secondary);
+  background-color: var(--primary);
+}
+
+th {
+  padding: 1rem 1.5rem;
+  text-align: center;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.headerActive:hover {
+  cursor: default;
+}
+
+.tableRow:nth-child(even) {
+  background-color: var(--secondary-alpha2);
+}
+
+.tableRow:hover {
+  background-color: var(--secondary-alpha);
+}
+
+thead tr:first-child th:first-child {
+  border-top-left-radius: var(--border-radius2);
+}
+
+thead tr:first-child th:last-child {
+  border-top-right-radius: var(--border-radius2);
+}
+
+tbody tr:last-child td:first-child {
+  border-bottom-left-radius: var(--border-radius2);
+}
+
+tbody tr:last-child td:last-child {
+  border-bottom-right-radius: var(--border-radius2);
+}
+
+th,
+td {
+  border: 1px solid #ccc;
+}
+
+thead tr:first-child th {
+  border-top: none;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+tr td:first-child,
+tr th:first-child {
+  border-left: none;
+}
+
+tr td:last-child,
+tr th:last-child {
+  border-right: none;
+}
+
+.orderButton {
+  transform: scaleY(1);
+  transition: all 0.2s ease-in-out;
+}
+
+.orderButtonRotate {
+  transform: scaleY(-1);
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.tableHeaderCell {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+@media screen and (max-width: 30em) {
+  .tableHeaderCell {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}

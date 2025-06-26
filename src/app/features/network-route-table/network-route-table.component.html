@@ -1,0 +1,41 @@
+<table class="table">
+  <caption>
+    Active IPv4 routes
+  </caption>
+  <thead>
+    <tr class="tableHeader">
+      <th
+        *ngFor="let key of tableColumns"
+        (click)="onHeaderClick(key)"
+        [ngClass]="{ headerActive: sortOrder.value === key }"
+      >
+        <div class="tableHeaderCell">
+          <p>{{ key }}</p>
+          <app-button
+            [iconPath]="sortButton.path"
+            [ariaLabel]="sortButton.alt"
+            class="orderButton icon"
+            [ngClass]="{
+              orderButtonRotate: sortDirection.value === 'asc',
+              hidden: this.sortOrder.value !== key,
+            }"
+            (clicked)="toggleSortDirections()"
+          />
+        </div>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      class="tableRow"
+      *ngFor="let route of networkRoutes"
+    >
+      <td
+        class="tableData"
+        *ngFor="let key of tableColumns"
+      >
+        {{ route | formatTableString: key }}
+      </td>
+    </tr>
+  </tbody>
+</table>
