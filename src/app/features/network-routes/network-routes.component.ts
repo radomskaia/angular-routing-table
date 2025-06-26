@@ -2,7 +2,7 @@ import type { OnInit } from '@angular/core';
 import { Component, inject } from '@angular/core';
 import { NetworkRouteTableComponent } from './components/network-route-table/network-route-table.component';
 import type { NetworkRoute } from '../../core/models/network-route.model';
-import { NetworkRouteService } from '../../core/services/network-route.service';
+import { NetworkRouteService } from '../../core/services/network-route/network-route.service';
 import { BehaviorSubject, combineLatest, switchMap } from 'rxjs';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { PAGE_SIZES } from '../../shared/constants/pagination-constants';

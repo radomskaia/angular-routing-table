@@ -3,12 +3,15 @@ import { HttpClient } from '@angular/common/http';
 import type {
   NetworkRoute,
   NetworkRouteResponse,
-} from '../models/network-route.model';
+} from '../../models/network-route.model';
 import type { Observable } from 'rxjs';
 import { map } from 'rxjs';
-import { RouteSortService } from './route-sort.service';
-import type { SortDirection, SortOrder } from '../../shared/types/sort.types';
-import { MOCK_URL } from '../../shared/constants/common-constants';
+import { RouteSortService } from '../route-sort/route-sort.service';
+import type {
+  SortDirection,
+  SortOrder,
+} from '../../../shared/types/sort.types';
+import { MOCK_URL } from '../../../shared/constants/common-constants';
 
 @Injectable({
   providedIn: 'root',

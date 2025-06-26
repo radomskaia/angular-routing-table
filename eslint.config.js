@@ -123,6 +123,15 @@ export default [
     },
   },
 
+  {
+    files: ['**/*.spec.ts', '**/*.test.ts'],
+    rules: {
+      '@typescript-eslint/no-magic-numbers': 'off',
+      'max-lines-per-function': 'off',
+      'no-console': 'off',
+    },
+  },
+
   // Prettier
   eslintConfigPrettier,
 ];

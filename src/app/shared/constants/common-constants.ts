@@ -1,6 +1,6 @@
 export const NOT_FOUND_MESSAGE = 'Sorry, smth went wrong((';
 export const MOCK_URL = 'mock-routes.json';
-export const PAGE_TITLE = 'route-table';
+export const PAGE_TITLE = 'Routing table';
 
 export const ROUTES_PATH = {
   MAIN: 'main',
